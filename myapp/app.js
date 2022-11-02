@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var errorsHandler = require('./middleware/errorsController')
+var numberErrorsHandler = require('./middleware/numberErrorsHandler')
 
 var indexRouter = require('./routes/index');
 var calculatorRouter = require('./routes/calculator');
@@ -30,7 +30,7 @@ app.use(function(req, res, next) {
 
 
 // errors handler
-app.use(errorsHandler.ErrorsHandler)
+app.use(numberErrorsHandler.ErrorsHandler)
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
