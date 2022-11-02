@@ -1,176 +1,66 @@
 
-# VS Code Readme Editor 📝  
-Import your existing Readme using the import button on the top right corner of the navbar, 
-or create a new Readme from scratch by typing in the editor.  
+# Тестовое задание от компании NeoFlex
+## REST приложение "Калюкулятор"
 
-## Get Started 🚀  
-To get started, hit the 'clear' button at the top of the editor!  
+### ТЗ
+Создать REST приложение "Калькулятор" с использованием NodeJs или фреймоворка Express (Web)
 
-## Prebuilt Components/Templates 🔥  
-You can checkout prebuilt components and templates by clicking on the menu icon
-on the top left corner of the navbar.
-    
-## Save Readme ✨  
-Once you're done, click on the save button to directly save your Readme to your
-project's root directory!
- 
-## API Reference
+Приложение должно уметь совершать простейшие математические операции.
+Пример работы:
 
-#### Get all items  
+Отправляется GET - запрос на вычисление суммы/вычитания/умножения/деления
+двух чисел, в ответ в body приходит результат вычисления.
+Критерии приемки, по возрастанию баллов
 
-```http
-  GET /api/items
-```  
+Приложение работает, выполняются операции сложения и вычитания
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. ID of the item you're requesting |
+Выполняются операции умножения и деления, выполнена обработка
+исключительных ситуаций
 
-#### Get item
+Соблюдена архитектура приложения (отдельные слои для контроллеров и
+логики), соблюдены name-conventions, clean code.
 
-~~~http
-  POST /api/items
-~~~
+## Описание реализации
+Данное приложение реализует простейший калькулятор.
+Использую api приложения можно получить результат математических действий для двух чисел.
+При каждом запросе к приложению происходит проверка содержимого отправленного JSON документа на правильность введенных данных.
+## Критерии проверки отправляемых данных
+* Два отправленных значения могут быть числом или числом в виде строки
+* Числа должны находиться в диапазоне от  **-1.7976931348623157e+308** до **1.7976931348623157e+308**
+* При использовании API **/calculator/division** необходимо учесть, что второе передаваемое значение **должно быть отличным от нуля**.
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `name`  | `string` | **Required**. Name of a new item |
-| `price` | `number` | **Required**. Name of a new item |  
- 
-## API Reference
+## Ссылка на API
 
-#### Get all items  
+#### Возвращает сложение
 
 ```http
-  GET /api/items
+  GET /calculator/sum
 ```  
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. ID of the item you're requesting |
-
-#### Get item
+#### Возвращает вычитание
 
 ~~~http
-  POST /api/items
+  GET /api/calculator/minus
 ~~~
+## Ссылка на API
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `name`  | `string` | **Required**. Name of a new item |
-| `price` | `number` | **Required**. Name of a new item |  
- 
-## API Reference
-
-#### Get all items  
+#### Возвращает умножение  
 
 ```http
-  GET /api/items
+  GET /calculator/multiplication
 ```  
+## Ссылка на API
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. ID of the item you're requesting |
-
-#### Get item
-
+#### Возвращает деление 
 ~~~http
-  POST /api/items
+  GET /calculator/division
 ~~~
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `name`  | `string` | **Required**. Name of a new item |
-| `price` | `number` | **Required**. Name of a new item |  
- 
-## API Reference
+## Формат JSON документа
 
-#### Get all items  
-
-```http
-  GET /api/items
-```  
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. ID of the item you're requesting |
-
-#### Get item
-
-~~~http
-  POST /api/items
-~~~
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `name`  | `string` | **Required**. Name of a new item |
-| `price` | `number` | **Required**. Name of a new item |  
- 
-## API Reference
-
-#### Get all items  
-
-```http
-  GET /api/items
-```  
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. ID of the item you're requesting |
-
-#### Get item
-
-~~~http
-  POST /api/items
-~~~
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `name`  | `string` | **Required**. Name of a new item |
-| `price` | `number` | **Required**. Name of a new item |  
- 
-## API Reference
-
-#### Get all items  
-
-```http
-  GET /api/items
-```  
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. ID of the item you're requesting |
-
-#### Get item
-
-~~~http
-  POST /api/items
-~~~
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `name`  | `string` | **Required**. Name of a new item |
-| `price` | `number` | **Required**. Name of a new item |  
- 
-## API Reference
-
-#### Get all items  
-
-```http
-  GET /api/items
-```  
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. ID of the item you're requesting |
-
-#### Get item
-
-~~~http
-  POST /api/items
-~~~
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `name`  | `string` | **Required**. Name of a new item |
-| `price` | `number` | **Required**. Name of a new item |  
+```javascript
+  { 
+    "num1": {"type": "number" or "string"}
+    "num2": {"type": "number" or "string"}
+  }
+```
